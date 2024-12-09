@@ -6,7 +6,7 @@ int main() {
     StudentRegistry registry;
 
     while (true) {
-        std::cout << "\nActions: [print | add | highest-average | lowest-average | save | find | print-averages | exit]\n";
+        std::cout << "\nActions: [print | add | highest-average | save | find | print-averages | exit]\n";
         std::cout << "Choose an action: ";
         std::string action;
         std::cin >> action;

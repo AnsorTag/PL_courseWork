@@ -47,6 +47,30 @@ public:
         }
     }
 
+    void printLowestAverageInGroup(int groupNumber) const {
+        const StudentWithGrades* bottomStudent = nullptr;
+        float lowestAverage = std::numeric_limits<float>::max();
+
+        for (const auto* student : students) {
+            if (student->getGroupNumber() == groupNumber) {
+                float avg = student->calculateAverageGrade();
+                if (!bottomStudent || avg < lowestAverage) {
+                    lowestAverage = avg;
+                    bottomStudent = student;
+                }
+            }
+        }
+
+        if (bottomStudent) {
+            std::cout << "Student with the lowest average in group " << groupNumber << ":\n";
+            bottomStudent->printDetails();
+        }
+        else {
+            std::cout << "No students found in group " << groupNumber << "\n";
+        }
+    }
+
+
     void saveToFile(const std::string& filename) const {
         std::ofstream file(filename);
         if (!file.is_open()) {

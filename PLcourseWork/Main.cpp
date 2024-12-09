@@ -21,6 +21,12 @@ int main() {
             int group = Student::getIntInput("Enter group number: ");
             registry.printHighestAverageInGroup(group);
         }
+
+        else if (action == "lowest-average") {
+            int group = Student::getIntInput("Enter group number: ");
+            registry.printLowestAverageInGroup(group);
+        }
+
         else if (action == "save") {
             std::string filename;
             std::cout << "Enter filename: ";
